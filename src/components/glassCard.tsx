@@ -1,10 +1,11 @@
 import { useRef, type ReactNode } from "react"
 
 interface Props {
-    children: ReactNode
+    children: ReactNode,
+    classname?: string
 }
 
-export default function GlassCard({ children }: Props) {
+export default function GlassCard({ classname, children }: Props) {
     const cardRef = useRef<HTMLDivElement>(null)
 
     function handleMouseMove(e: React.MouseEvent<HTMLDivElement>) {
@@ -28,8 +29,8 @@ export default function GlassCard({ children }: Props) {
 
     return (
         <div ref={cardRef} onMouseMove={handleMouseMove} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}
-            className="relative w-full flex rounded-md border border-white/20 bg-gradient-to-br from-white/20 to-white/5 backdrop-blur-[2px] shadow-[0_8px_30px_rgba(0,0,0,0.25)] 
-            overflow-hidden transition-[background] duration-300 p-3"
+            className={`relative flex rounded-md border border-white/20 bg-gradient-to-br from-white/20 to-white/5 backdrop-blur-[2px] shadow-[0_8px_30px_rgba(0,0,0,0.25)] 
+            overflow-hidden transition-[background] duration-300 p-3 ${classname ? classname : "w-fit"}`}
             style={{
                 background: `
           radial-gradient(
