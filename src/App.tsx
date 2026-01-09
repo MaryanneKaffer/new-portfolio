@@ -3,8 +3,17 @@ import GlassCard from "./components/glassCard"
 import { Projects } from "./assets/projects"
 import { Technologies } from "./assets/techSTack"
 import { HiAcademicCap } from "react-icons/hi"
+import { useState } from "react"
+import ProjectPreview from "./components/projectPreview"
+
+type Project = {
+  name: string
+  link: string
+}
 
 function App() {
+  const [projectView, setProjectView] = useState<Project | null>(null)
+
   return (
     <section className="flex flex-col w-full h-full gap-2 text-white text-sm lg:text-base">
       <div className="flex flex-col gap-2">
@@ -17,7 +26,13 @@ function App() {
               </span>
               <div className="flex flex-col ml-3">
                 {Projects.map((p) => (
-                  <a href={p.link} className="w-fit underline hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.6)] hover:brightness-125 transition-all">{p.name}</a>
+                  <div className="relative w-fit" onMouseEnter={() => setProjectView(p)} onMouseLeave={() => setProjectView(null)}>
+                    <a href={p.link} className="underline hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.6)] hover:brightness-125 transition-all"
+                      onMouseEnter={() => setProjectView(p)} onMouseLeave={() => setProjectView(null)}>
+                      {p.name}
+                    </a>
+                    {projectView?.name === p.name && <ProjectPreview data={p} />}
+                  </div>
                 ))}
               </div>
             </div>
