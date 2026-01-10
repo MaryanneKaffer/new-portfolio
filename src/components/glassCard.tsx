@@ -38,7 +38,7 @@ export default function GlassCard({ classname, children }: Props) {
             rgba(255,255,255,calc(0.15 * var(--glow, 0))),
             transparent 60%
           ),
-          linear-gradient(to bottom right, rgba(255,255,255,0.2), rgba(255,255,255,0.05)) `
+          linear-gradient(to bottom right, rgba(255, 255, 255, 0.32), rgba(255,255,255,0.05)) `
             }}
         >
             {children}

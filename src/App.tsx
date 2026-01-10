@@ -1,14 +1,16 @@
 import { FaHeart, FaPaperclip, FaWrench } from "react-icons/fa6"
 import GlassCard from "./components/glassCard"
 import { Projects } from "./assets/projects"
-import { Technologies } from "./assets/techSTack"
+import { Technologies } from "./assets/techStack"
 import { HiAcademicCap } from "react-icons/hi"
 import { useState } from "react"
 import ProjectPreview from "./components/projectPreview"
+import { GiSpellBook } from "react-icons/gi"
 
 type Project = {
   name: string
   link: string
+  image: string
 }
 
 function App() {
@@ -27,7 +29,7 @@ function App() {
               <div className="flex flex-col ml-3">
                 {Projects.map((p) => (
                   <div className="relative w-fit" onMouseEnter={() => setProjectView(p)} onMouseLeave={() => setProjectView(null)}>
-                    <a href={p.link} className="underline hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.6)] hover:brightness-125 transition-all"
+                    <a target="_blank" href={p.link} className="underline hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.6)] hover:brightness-125 transition-all"
                       onMouseEnter={() => setProjectView(p)} onMouseLeave={() => setProjectView(null)}>
                       {p.name}
                     </a>
@@ -40,8 +42,8 @@ function App() {
           <GlassCard>
             <div className="justify-items-center flex flex-col gap-1">
               <span className="flex gap-2 items-center">
-                <FaHeart />
-                <p>About me</p>
+                <GiSpellBook />
+                <p>My Journey</p>
               </span>
               <p>I have been involved with programming since childhood and am always looking to learn and grow. In recent months, I have been focusing my studies on front-end development, using technologies such as React and JavaScript to build modern and high-performance web applications.</p>
             </div>
@@ -77,7 +79,13 @@ function App() {
             </GlassCard>
           </span>
           <GlassCard classname="w-full">
-            *
+            <div className="justify-items-center flex flex-col gap-1">
+              <span className="flex gap-2 items-center">
+                <FaHeart />
+                <p>About me</p>
+              </span>
+              <p>I have been involved with programming since childhood and am always looking to learn and grow.</p>
+            </div>
           </GlassCard>
         </div>
       </div>
