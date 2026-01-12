@@ -29,7 +29,7 @@ export default function GlassCard({ classname, children }: Props) {
 
     return (
         <div ref={cardRef} onMouseMove={handleMouseMove} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}
-            className={`flex rounded-md border border-white/20 backdrop-blur-[2px] shadow-[0_8px_30px_rgba(0,0,0,0.25)] 
+            className={`flex rounded-md border-2 border-white/20 backdrop-blur-[2px] shadow-[0_8px_30px_rgba(0,0,0,0.25)] 
             transition-[background] duration-300 p-3 ${classname ? classname : "w-fit"} text-white`}
             style={{
                 background: `
@@ -38,7 +38,7 @@ export default function GlassCard({ classname, children }: Props) {
             rgba(255,255,255,calc(0.15 * var(--glow, 0))),
             transparent 60%
           ),
-          linear-gradient(to bottom right, rgba(255, 255, 255, 0.32), rgba(255,255,255,0.05)) `
+          linear-gradient(to bottom right, rgba(255, 255, 255, 0.23), rgba(255,255,255,0.05)) `
             }}
         >
             {children}

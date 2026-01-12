@@ -6,6 +6,7 @@ import { HiAcademicCap } from "react-icons/hi"
 import { useState } from "react"
 import ProjectPreview from "./components/projectPreview"
 import { GiSpellBook } from "react-icons/gi"
+import { useLanguage } from "./context/languageContext";
 
 type Project = {
   name: string
@@ -14,6 +15,7 @@ type Project = {
 }
 
 function App() {
+  const { language } = useLanguage()
   const [projectView, setProjectView] = useState<Project | null>(null)
 
   return (
@@ -24,11 +26,11 @@ function App() {
             <div className="flex flex-col gap-1">
               <span className="flex gap-2 items-center">
                 <FaPaperclip />
-                <p>Star Projects</p>
+                <p className="italic">{language === "pt" ? "Top Projetos" : "Star Projects"}</p>
               </span>
               <div className="flex flex-col ml-3">
-                {Projects.map((p) => (
-                  <div className="relative w-fit" onMouseEnter={() => setProjectView(p)} onMouseLeave={() => setProjectView(null)}>
+                {Projects.map((p: any) => (
+                  <div key={p.name} className="relative w-fit" onMouseEnter={() => setProjectView(p)} onMouseLeave={() => setProjectView(null)}>
                     <a target="_blank" href={p.link} className="underline hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.6)] hover:brightness-125 transition-all"
                       onMouseEnter={() => setProjectView(p)} onMouseLeave={() => setProjectView(null)}>
                       {p.name}
@@ -43,9 +45,12 @@ function App() {
             <div className="justify-items-center flex flex-col gap-1">
               <span className="flex gap-2 items-center">
                 <GiSpellBook />
-                <p>My Journey</p>
+                <p className="italic">{language === "pt" ? "Minha Jornada" : "My Journey"}</p>
               </span>
-              <p>I have been involved with programming since childhood and am always looking to learn and grow. In recent months, I have been focusing my studies on front-end development, using technologies such as React and JavaScript to build modern and high-performance web applications.</p>
+              <p>{language === "pt" ?
+                "Desde o início de 2025, venho estudando desenvolvimento front-end de forma independente, com foco em React e JavaScript para criar aplicações web modernas e de alto desempenho. Nos últimos meses, tenho aprofundado minhas habilidades e colocado isso em prática por meio de diferentes projetos, que você pode conferir no meu blog."
+                : "Since the beginning of 2025, I have been independently studying front-end development, focusing on React and JavaScript to build modern, high-performance web applications. Over the past months, I’ve been deepening my skills and applying them in practice through different projects, which you can see on my blog."
+              }</p>
             </div>
           </GlassCard>
         </span>
@@ -54,19 +59,19 @@ function App() {
             <GlassCard classname="w-[400px]">
               <div className="justify-items-center flex flex-col gap-1 w-full">
                 <div className="flex flex-wrap gap-2">
-                  {Technologies.map((t) => (
-                    <p className="hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.6)] hover:brightness-125 transition-all">{t}</p>
+                  {Technologies.map((t: any, i) => (
+                    <p key={i} className="hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.6)] hover:brightness-125 transition-all">{t}</p>
                   ))}
                 </div>
                 <span className="flex gap-2 items-center ml-auto">
                   <FaWrench />
-                  <p>Tech stack</p>
+                  <p className="italic">Tech stack</p>
                 </span>
               </div>
             </GlassCard>
             <GlassCard classname="w-[400px]">
               <div className="leading-tight ">
-                <p>Software Engineer</p>
+                <p>{language === "pt" ? "Engenharia de Software" : "Software Engineering"}</p>
                 <span className="text-gray-300">
                   <p>Uninter</p>
                   <p>2025 - 2029</p>
@@ -74,7 +79,7 @@ function App() {
               </div>
               <span className="flex gap-2 items-center ml-auto mt-auto">
                 <HiAcademicCap />
-                <p>Academics</p>
+                <p className="italic">{language === "pt" ? "Formação" : "Academics"}</p>
               </span>
             </GlassCard>
           </span>
@@ -82,9 +87,12 @@ function App() {
             <div className="justify-items-center flex flex-col gap-1">
               <span className="flex gap-2 items-center">
                 <FaHeart />
-                <p>About me</p>
+                <p className="italic">{language === "pt" ? "Sobre mim" : "About me"}</p>
               </span>
-              <p>I have been involved with programming since childhood and am always looking to learn and grow.</p>
+              <p>{language === "pt" ?
+                "Desde criança sempre tive muito contato com computadores e a tecnologia acabou virando parte do meu dia a dia. Cresci jogando videogame e foi daí que nasceu minha curiosidade e interesse por programação."
+                : "Since childhood, I’ve always had a lot of contact with computers, and technology naturally became part of my daily life. I grew up playing video games, and that’s where my curiosity and interest in programming began."
+              }</p>
             </div>
           </GlassCard>
         </div>
