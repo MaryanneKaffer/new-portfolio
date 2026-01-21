@@ -1,7 +1,7 @@
 import { FaHeart, FaPaperclip, FaWrench } from "react-icons/fa6"
 import GlassCard from "./components/glassCard"
 import { Projects } from "./assets/projects"
-import { Technologies } from "./assets/techStack"
+import { Technologies } from "./components/techStack"
 import { HiAcademicCap } from "react-icons/hi"
 import { useState } from "react"
 import ProjectPreview from "./components/projectPreview"
@@ -48,8 +48,8 @@ function App() {
                 <p className="italic">{language === "pt" ? "Minha Jornada" : "My Journey"}</p>
               </span>
               <p>{language === "pt" ?
-                "Desde o início de 2025, venho estudando desenvolvimento front-end de forma independente, com foco em React e JavaScript para criar aplicações web modernas e de alto desempenho. Nos últimos meses, tenho aprofundado minhas habilidades e colocado isso em prática por meio de diferentes projetos, que você pode conferir no meu blog."
-                : "Since the beginning of 2025, I have been independently studying front-end development, focusing on React and JavaScript to build modern, high-performance web applications. Over the past months, I’ve been deepening my skills and applying them in practice through different projects, which you can see on my blog."
+                "Desde o início de 2025, venho estudando desenvolvimento front-end de forma independente, com foco em React e TypeScript para criar aplicações web modernas e de alto desempenho. Nos últimos meses, tenho aprofundado minhas habilidades e colocado isso em prática por meio de diferentes projetos, que você pode conferir no meu blog."
+                : "Since the beginning of 2025, I have been independently studying front-end development, focusing on React and TypeScript to build modern, high-performance web applications. Over the past months, I’ve been deepening my skills and applying them in practice through different projects, which you can see on my blog."
               }</p>
             </div>
           </GlassCard>
@@ -71,7 +71,7 @@ function App() {
             <GlassCard classname="w-[400px]">
               <div className="justify-items-center flex flex-col gap-1 w-full">
                 <div className="flex flex-wrap gap-2">
-                  {Technologies.map((t: any, i) => (
+                  {Technologies.map((t: any, i: number) => (
                     <p key={i} className="hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.6)] hover:brightness-125 transition-all">{t}</p>
                   ))}
                 </div>
@@ -97,7 +97,7 @@ function App() {
           </span>
         </div>
         <GlassCard classname="h-[340px]">
-          <img src="/carGif.gif" className="object-cover w-full h-full" />
+          <video autoPlay muted loop playsInline src="/cat.mp4" aria-label="cats gif" className="object-cover w-full h-full" />
         </GlassCard>
       </div>
     </section >
