@@ -24,11 +24,11 @@ function App() {
         <span className="flex gap-2">
           <GlassCard classname="w-[200px]">
             <div className="flex flex-col gap-1">
-              <span className="flex gap-2 items-center">
+              <span className="flex gap-2 items-center ">
                 <FaPaperclip />
                 <p className="italic">{language === "pt" ? "Top Projetos" : "Star Projects"}</p>
               </span>
-              <div className="flex flex-col ml-3">
+              <div className="flex flex-col ml-3 !leading-normal md:text-base text-[13px]">
                 {Projects.map((p: any) => (
                   <div key={p.name} className="relative w-fit" onMouseEnter={() => setProjectView(p)} onMouseLeave={() => setProjectView(null)}>
                     <a target="_blank" href={p.link} className="underline hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.6)] hover:brightness-125 transition-all"
@@ -43,11 +43,11 @@ function App() {
           </GlassCard>
           <GlassCard>
             <div className="justify-items-center flex flex-col gap-1">
-              <span className="flex gap-2 items-center">
+              <span className="flex gap-2 items-center ">
                 <GiSpellBook />
                 <p className="italic">{language === "pt" ? "Minha Jornada" : "My Journey"}</p>
               </span>
-              <p>{language === "pt" ?
+              <p className="">{language === "pt" ?
                 "Desde o início de 2025, venho estudando desenvolvimento front-end de forma independente, com foco em React e TypeScript para criar aplicações web modernas e de alto desempenho. Nos últimos meses, tenho aprofundado minhas habilidades e colocado isso em prática por meio de diferentes projetos, que você pode conferir no meu blog."
                 : "Since the beginning of 2025, I have been independently studying front-end development, focusing on React and TypeScript to build modern, high-performance web applications. Over the past months, I’ve been deepening my skills and applying them in practice through different projects, which you can see on my blog."
               }</p>
@@ -68,35 +68,35 @@ function App() {
             </div>
           </GlassCard>
           <span className="flex flex-col gap-2">
-            <GlassCard classname="w-[400px]">
+            <GlassCard classname="md:w-[400px] w-[150px]">
               <div className="justify-items-center flex flex-col gap-1 w-full">
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap md:gap-2 gap-x-1.5 gap-y-1">
                   {Technologies.map((t: any, i: number) => (
-                    <p key={i} className="hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.6)] hover:brightness-125 transition-all">{t}</p>
+                    <p key={i} className="hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.6)] hover:brightness-125 transition-all !md:text-[20px] !text-[13px]">{t}</p>
                   ))}
                 </div>
-                <span className="flex gap-2 items-center ml-auto">
+                <span className="flex gap-2 items-center ml-auto ">
                   <FaWrench />
                   <p className="italic">Tech stack</p>
                 </span>
               </div>
             </GlassCard>
-            <GlassCard classname="w-[400px]">
-              <div className="leading-tight ">
+            <GlassCard classname="md:w-[400px] flex md:flex-row flex-col">
+              <div className="">
                 <p>{language === "pt" ? "Engenharia de Software" : "Software Engineering"}</p>
-                <span className="text-gray-300">
+                <span className="text-gray-300 md:text-base text-[10px]">
                   <p>Uninter</p>
                   <p>2025 - 2029</p>
                 </span>
               </div>
-              <span className="flex gap-2 items-center ml-auto mt-auto">
+              <span className="flex gap-2 items-center ml-auto mt-auto ">
                 <HiAcademicCap />
                 <p className="italic">{language === "pt" ? "Formação" : "Academics"}</p>
               </span>
             </GlassCard>
           </span>
         </div>
-        <GlassCard classname="h-[340px]">
+        <GlassCard classname="md:h-[320px]">
           <video autoPlay muted loop playsInline src="/cat.mp4" aria-label="cats gif" className="object-cover w-full h-full" />
         </GlassCard>
       </div>

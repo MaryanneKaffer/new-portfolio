@@ -30,7 +30,7 @@ export default function GlassCard({ classname, children }: Props) {
     return (
         <div ref={cardRef} onMouseMove={handleMouseMove} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}
             className={`flex rounded-md border-2 border-white/20 backdrop-blur-[2px] shadow-[0_8px_30px_rgba(0,0,0,0.25)] 
-            transition-[background] duration-300 p-3 ${classname ? classname : "w-fit"} text-white`}
+            transition-[background] duration-300 md:p-3 p-2 ${classname ? classname : "w-fit"} text-white md:text-base text-[11px] md:leading-normal leading-tight`}
             style={{
                 background: `
           radial-gradient(
