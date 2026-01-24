@@ -28,7 +28,7 @@ function App() {
                 <FaPaperclip />
                 <p className="italic">{language === "pt" ? "Top Projetos" : "Star Projects"}</p>
               </span>
-              <div className="flex flex-col ml-3 !leading-normal md:text-base text-[13px]">
+              <div className="flex flex-col ml-3 !leading-normal lg:text-base text-[13px]">
                 {Projects.map((p: any) => (
                   <div key={p.name} className="relative w-fit" onMouseEnter={() => setProjectView(p)} onMouseLeave={() => setProjectView(null)}>
                     <a target="_blank" href={p.link} className="underline hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.6)] hover:brightness-125 transition-all"
@@ -67,12 +67,12 @@ function App() {
               }</p>
             </div>
           </GlassCard>
-          <span className="flex flex-col gap-2">
-            <GlassCard classname="md:w-[400px] w-[150px]">
+          <span className="flex flex-col gap-2 lg:w-[80%]">
+            <GlassCard classname="lg:w-[100%] w-[150px]">
               <div className="justify-items-center flex flex-col gap-1 w-full">
-                <div className="flex flex-wrap md:gap-2 gap-x-1.5 gap-y-1">
+                <div className="flex flex-wrap lg:gap-2 gap-x-1.5 gap-y-1 lg:text-[20px] text-[13px]">
                   {Technologies.map((t: any, i: number) => (
-                    <p key={i} className="hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.6)] hover:brightness-125 transition-all !md:text-[20px] !text-[13px]">{t}</p>
+                    <p key={i} className="hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.6)] hover:brightness-125 transition-all">{t}</p>
                   ))}
                 </div>
                 <span className="flex gap-2 items-center ml-auto ">
@@ -81,11 +81,11 @@ function App() {
                 </span>
               </div>
             </GlassCard>
-            <GlassCard classname="md:w-[400px] flex md:flex-row flex-col">
-              <div className="">
-                <p>{language === "pt" ? "Engenharia de Software" : "Software Engineering"}</p>
-                <span className="text-gray-300 md:text-base text-[10px]">
-                  <p>Uninter</p>
+            <GlassCard classname="lg:w-[100%] flex lg:flex-row flex-col">
+              <div className="leading-tight ">
+                <p className="-mb-1">{language === "pt" ? "Engenharia de Software" : "Software Engineering"}</p>
+                <span className="text-gray-300 lg:text-base text-[10px]">
+                  <p className="-mb-1">Uninter</p>
                   <p>2025 - 2029</p>
                 </span>
               </div>
@@ -96,7 +96,7 @@ function App() {
             </GlassCard>
           </span>
         </div>
-        <GlassCard classname="md:h-[320px]">
+        <GlassCard classname="lg:h-[320px]">
           <video autoPlay muted loop playsInline src="/cat.mp4" aria-label="cats gif" className="object-cover w-full h-full" />
         </GlassCard>
       </div>
