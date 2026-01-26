@@ -14,7 +14,7 @@ export default function DefaultLayout({ children }: DefaultLayoutProps) {
             if (window.innerWidth > 1504) {
                 setBg("bg-[url('/bgPc.webp')]")
             } else {
-                setBg("bg-[url('/bgMobile.webp')]")
+                setBg("bg-[url('/bgMb.webp')]")
             }
         }
 
