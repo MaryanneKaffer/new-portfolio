@@ -12,9 +12,9 @@ export default function DefaultLayout({ children }: DefaultLayoutProps) {
     useEffect(() => {
         function handleResize() {
             if (window.innerWidth > 1504) {
-                setBg("bg-[url('/ascent.WebP')]")
+                setBg("bg-[url('/bgPc.webp')]")
             } else {
-                setBg("bg-[url('/bgMobile.WebP')]")
+                setBg("bg-[url('/bgMobile.webp')]")
             }
         }
 
@@ -25,7 +25,7 @@ export default function DefaultLayout({ children }: DefaultLayoutProps) {
     }, [])
 
     return (
-        <div className={`max-h-[100dvh] h-[100dvh] min-w-[100dvw] flex flex-col py-6 2xl:px-[28vw] lg:px-[18vw] md:px-[15vw] sm:px-[10vw] px-3 ${bg} bg-cover bg-start bg-no-repeat gap-2 overflow-hidden`}>
+        <div className={`max-h-[100dvh] h-[100dvh] min-w-[100dvw] flex flex-col py-6 2xl:px-[28vw] lg:px-[18vw] md:px-[15vw] sm:px-[10vw] px-3 ${bg} bg-cover bg-start bg-no-repeat gap-2`}>
             <footer>
                 <Profile />
             </footer>

@@ -1,14 +1,16 @@
 @import "tailwindcss";
 
-p {
+@layer base {
+  p {
     cursor: default;
     user-select: none;
     -webkit-user-select: none;
-}
+  }
 
-img {
+  img {
     -webkit-user-drag: none;
     user-drag: none;
     user-select: none;
     -webkit-user-select: none;
+  }
 }

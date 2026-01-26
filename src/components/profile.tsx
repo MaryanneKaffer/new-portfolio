@@ -8,7 +8,7 @@ export default function Profile() {
         <div className="flex gap-2">
             <GlassCard classname="w-full">
                 <div className="flex gap-2">
-                    <img src="/pfp.WebP" alt="Maryanne Käffer" className="border border-white/20 rounded-md lg:h-27 h-16 " />
+                    <img src="/pfp.webp" alt="Maryanne Käffer" className="border border-white/20 rounded-md lg:h-27 h-16 " />
                     <div className="flex flex-col ">
                         <h1 className="lg:text-2xl text-sm">Maryanne Käffer de Faria</h1>
                         <p className="text-white/80 lg:text-base text-[9px] lg:leading-normal leading-tight"> {language === "pt" ?
