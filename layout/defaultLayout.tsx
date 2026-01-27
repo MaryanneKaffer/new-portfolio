@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
-import Links from "../src/components/links"
-import Profile from "../src/components/profile"
+import Links from "../src/components/common/links"
+import Profile from "../src/components/main/profileCard"
 
 type DefaultLayoutProps = {
     children: React.ReactNode
@@ -12,9 +12,9 @@ export default function DefaultLayout({ children }: DefaultLayoutProps) {
     useEffect(() => {
         function handleResize() {
             if (window.innerWidth > 1504) {
-                setBg("bg-[url('/bgPc.webp')]")
+                setBg("bg-[url('/bg/bgPc.webp')]")
             } else {
-                setBg("bg-[url('/bgMb.webp')]")
+                setBg("bg-[url('/bg/bgMb.webp')]")
             }
         }
 

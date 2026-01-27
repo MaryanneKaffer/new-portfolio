@@ -1,5 +1,5 @@
 "use client";
-import { useLanguage } from "../context/languageContext";
+import { useLanguage } from "../../context/languageContext";
 import { MdLanguage } from "react-icons/md";
 
 export default function LanguageSwitch() {
